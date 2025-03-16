@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Planner - Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h1>Workout Planner</h1>
+            <h2>Create Account</h2>
+            <div id="error-message" class="error-message"></div>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Register</button>
+                </div>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="index.html">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                document.getElementById('error-message').textContent = 'Passwords do not match';
+                return;
+            }
+            
+            // Create AJAX request
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'auth.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    try {
+                        const response = JSON.parse(this.responseText);
+                        if (response.success) {
+                            document.getElementById('error-message').className = 'success-message';
+                            document.getElementById('error-message').textContent = 'Registration successful! Redirecting to login page...';
+                            setTimeout(function() {
+                                window.location.href = 'index.html?registered=true';
+                            }, 2000);
+                        } else {
+                            document.getElementById('error-message').textContent = response.message;
+                        }
+                    } catch (e) {
+                        document.getElementById('error-message').textContent = 'Error processing response: ' + this.responseText;
+                    }
+                } else {
+                    document.getElementById('error-message').textContent = 'Server error: ' + this.status;
+                }
+            };
+
+            xhr.onerror = function() {
+                document.getElementById('error-message').textContent = 'Request failed. Check your network connection.';
+            };
+            
+            xhr.send(`action=register&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+        });
+    </script>
+</body>
+</html>
+
