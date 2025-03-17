@@ -1,89 +1,35 @@
 <?php
 session_start();
-require_once 'db.php';
-
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header('Location: index.html');
     exit;
 }
-
-$user_id = $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Workout Planner - Home</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
-
-    <div class="container">
-        <h2>Welcome, <span id="username"></span></h2>
-
-        <div class="profile">
-            <h3>Profile</h3>
-            <p>Name: <span id="name"></span></p>
-            <p>Age: <span id="age"></span></p>
-            <p>Weight: <span id="weight"></span></p>
-            <p>Biography: <span id="biography"></span></p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Workout Planner</h1>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="home.php" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="workout.php" class="nav-link">Workout Planner</a></li>
+                <li class="nav-item"><a href="auth.php?action=logout" class="nav-link">Logout</a></li>
+            </ul>
         </div>
-
-        <div class="planner">
-            <h3>Weekly Planner</h3>
-            <table id="weekly-planner">
-                <thead>
-                    <tr>
-                        <th>Day</th>
-                        <th>Muscle Group</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Dynamically populated via AJAX -->
-                </tbody>
-            </table>
+    </nav>
+    
+    <div class="container">
+        <div class="welcome-message">
+            <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></h2>
+            <p>Use the navigation bar above to access your workout planner.</p>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function () {
-            // Fetch user profile details via AJAX
-            $.ajax({
-                url: 'fetch_profile.php',
-                method: 'GET',
-                success: function (data) {
-                    const user = JSON.parse(data);
-                    $('#username').text(user.name);
-                    $('#name').text(user.name);
-                    $('#age').text(user.age || 'N/A');
-                    $('#weight').text(user.weight || 'N/A');
-                    $('#biography').text(user.biography || 'No biography added.');
-                },
-                error: function () {
-                    alert('Error fetching profile details.');
-                }
-            });
-
-            // Fetch weekly planner via AJAX
-            $.ajax({
-                url: 'fetch_planner.php',
-                method: 'GET',
-                success: function (data) {
-                    const planner = JSON.parse(data);
-                    let rows = '';
-                    planner.forEach(day => {
-                        rows += `<tr><td>${day.day_of_week}</td><td>${day.muscle_name || 'Rest Day'}</td></tr>`;
-                    });
-                    $('#weekly-planner tbody').html(rows);
-                },
-                error: function () {
-                    alert('Error fetching planner details.');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
