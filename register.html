@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Planner - Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h1>Workout Planner</h1>
+            <h2>Create Account</h2>
+            <?php if (isset($_GET['error'])): ?>
+                <div class="error-message"><?php echo htmlspecialchars($_GET['error']); ?></div>
+            <?php endif; ?>
+            <?php if (isset($_GET['success'])): ?>
+                <div class="success-message"><?php echo htmlspecialchars($_GET['success']); ?></div>
+            <?php endif; ?>
+            <form id="register-form" action="register_handler.php" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Register</button>
+                </div>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="index.html">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Client-side password validation
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                e.preventDefault(); // Stop form submission
+                alert('Passwords do not match');
+            }
+        });
+    </script>
+</body>
+</html>
+

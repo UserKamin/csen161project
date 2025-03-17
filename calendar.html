@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Calendar</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="calendar.css">
+    <script src="calendar.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Workout Planner</h1>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="exercises.php" class="nav-link">Exercises</a></li>
+                <li class="nav-item"><a href="workouts.php" class="nav-link">Workouts</a></li>
+                <li class="nav-item"><a href="calendar.php" class="nav-link active">Calendar</a></li>
+                <li class="nav-item"><a href="auth.php?action=logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Workout Calendar</h1>
+        <div class="calendar" id="workout-calendar">
+            <!-- Calendar will be dynamically inserted here by PHP -->
+        </div>
+    </div>
+
+    <!-- Workout Modal -->
+    <div id="workout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add Workout for <span id="selected-day"></span></h3>
+            <form id="workout-form">
+                <input type="hidden" id="day-index" name="day-index">
+                <div class="form-group">
+                    <label for="workout-select">Select Workout</label>
+                    <select id="workout-select" name="workout-select" required>
+                        <!-- Workout options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Add Workout</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

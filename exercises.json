@@ -1,0 +1,179 @@
+{
+  "exercises": [
+    {
+      "name": "Bench Press",
+      "muscle_groups": ["Chest", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "bench_press.jpg",
+      "link": "https://calistree.app/datasheet/barbell-bench-press-e01x"
+    },
+    {
+      "name": "Deadlift",
+      "muscle_groups": ["Back", "Legs", "Core"],
+      "difficulty": "Advanced",
+      "image": "deadlift.jpg",
+      "link": "https://calistree.app/datasheet/deadlift-e0dw"
+    },
+    {
+      "name": "Back Squat",
+      "muscle_groups": ["Legs", "Core"],
+      "difficulty": "Intermediate",
+      "image": "squat.jpg",
+      "link": "https://calistree.app/datasheet/back-squat-e0h0"
+    },
+    {
+      "name": "Bicep Curl",
+      "muscle_groups": ["Arms"],
+      "difficulty": "Beginner",
+      "image": "bicep_curl.jpg",
+      "link": "https://calistree.app/datasheet/double-dumbbell-biceps-curl-e134"
+    },
+    {
+      "name": "Overhead Press",
+      "muscle_groups": ["Shoulders", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "overhead_press.jpg",
+      "link": "https://calistree.app/datasheet/barbell-overhead-press-e00g"
+    },
+    {
+      "name": "Pull-Up",
+      "muscle_groups": ["Back", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "pull_up.jpg",
+      "link": "https://calistree.app/datasheet/pullup-e085"
+    },
+    {
+      "name": "Push-Up",
+      "muscle_groups": ["Chest", "Arms", "Core"],
+      "difficulty": "Beginner",
+      "image": "push_up.jpg",
+      "link": "https://calistree.app/datasheet/pushup-e087"
+    },
+    {
+      "name": "Plank",
+      "muscle_groups": ["Core"],
+      "difficulty": "Beginner",
+      "image": "plank.jpg",
+      "link": "https://calistree.app/datasheet/plank-e07z"
+    },
+    {
+      "name": "Lunges",
+      "muscle_groups": ["Legs", "Core"],
+      "difficulty": "Beginner",
+      "image": "lunges.jpg",
+      "link": "https://calistree.app/datasheet/forward-lunge-e03o"
+    },
+    {
+      "name": "Lat Pulldown",
+      "muscle_groups": ["Back", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "lat_pulldown.jpg",
+      "link": "https://calistree.app/datasheet/lat-pulldown-e07j"
+    },
+    {
+      "name": "Dumbbell Fly",
+      "muscle_groups": ["Chest", "Shoulders"],
+      "difficulty": "Intermediate",
+      "image": "dumbbell_fly.jpg",
+      "link": "https://calistree.app/datasheet/dumbbell-fly-e0ph"
+    },
+    {
+      "name": "Oblique Crunch",
+      "muscle_groups": ["Core"],
+      "difficulty": "Intermediate",
+      "image": "oblique_crunch.jpg",
+      "link": "https://calistree.app/datasheet/side-body-crunch-e0x8"
+    },
+    {
+      "name": "Leg Press",
+      "muscle_groups": ["Legs"],
+      "difficulty": "Intermediate",
+      "image": "leg_press.jpg",
+      "link": "https://calistree.app/datasheet/banded-leg-press-e0ko"
+    },
+    {
+      "name": "Barbell Row",
+      "muscle_groups": ["Back", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "barbell_row.jpg",
+      "link": "https://calistree.app/datasheet/barbell-bent-over-row-e025"
+    },
+    {
+      "name": "Cable Pressdown",
+      "muscle_groups": ["Arms"],
+      "difficulty": "Intermediate",
+      "image": "cable_pressdown.jpg",
+      "link": "https://calistree.app/datasheet/cable-press-down-e0e0"
+    },
+    {
+      "name": "Bent Reverse Crunch",
+      "muscle_groups": ["Core"],
+      "difficulty": "Intermediate",
+      "image": "bent_reverse_crunch.jpg",
+      "link": "https://calistree.app/datasheet/dead-bug-crunch-e0iq"
+    },
+    {
+      "name": "Hammer Curl",
+      "muscle_groups": ["Arms"],
+      "difficulty": "Beginner",
+      "image": "hammer_curl.jpg",
+      "link": "https://calistree.app/datasheet/double-dumbbell-hammer-curl-e10t"
+    },
+    {
+      "name": "Incline Bench Press",
+      "muscle_groups": ["Chest", "Shoulders", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "incline_bench_press.jpg",
+      "link": "https://calistree.app/datasheet/barbell-bench-press-e01x"
+    },
+    {
+      "name": "Wide T-Bar Row",
+      "muscle_groups": ["Shoulders", "Back"],
+      "difficulty": "Intermediate",
+      "image": "wide_t_row.jpg",
+      "link": "https://calistree.app/datasheet/wide-row-e0do"
+    },
+    {
+      "name": "Calf Raise",
+      "muscle_groups": ["Legs"],
+      "difficulty": "Beginner",
+      "image": "calf_raise.jpg",
+      "link": "https://calistree.app/datasheet/calf-raise-e0eg"
+    },
+    {
+      "name": "Tricep Dip",
+      "muscle_groups": ["Arms"],
+      "difficulty": "Intermediate",
+      "image": "tricep_dip.jpg",
+      "link": "https://calistree.app/datasheet/straight-legs-bench-dip-e0zh"
+    },
+    {
+      "name": "Hanging Leg Raise",
+      "muscle_groups": ["Core"],
+      "difficulty": "Advanced",
+      "image": "hanging_leg_raise.jpg",
+      "link": "https://calistree.app/datasheet/hanging-leg-raises-e04s"
+    },
+    {
+      "name": "Lateral Delt Raise",
+      "muscle_groups": ["Shoulders"],
+      "difficulty": "Intermediate",
+      "image": "lateral_delt_raise.jpg",
+      "link": "https://calistree.app/datasheet/lateral-delt-raise-e0e4"
+    },
+    {
+      "name": "Romanian Deadlift",
+      "muscle_groups": ["Back", "Legs"],
+      "difficulty": "Advanced",
+      "image": "romanian_deadlift.jpg",
+      "link": "https://calistree.app/datasheet/romanian-deadlift-e0dx"
+    },
+    {
+      "name": "Chest Dip",
+      "muscle_groups": ["Chest", "Arms"],
+      "difficulty": "Advanced",
+      "image": "chest_dip.jpg",
+      "link": "https://calistree.app/datasheet/dip-e034"
+    }
+  ]
+}

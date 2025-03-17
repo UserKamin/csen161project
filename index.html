@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Planner - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h1>Workout Planner</h1>
+            <h2>Login</h2>
+            <div id="error-message" class="error-message"></div>
+            <div id="success-message" class="success-message"></div>
+            <form id="login-form" action="login_handler.php" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Login</button>
+                </div>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="register.html">Register here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Check if user just registered
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('registered') === 'true') {
+                document.getElementById('success-message').textContent = 'Account created successfully! Please log in.';
+            }
+            if (urlParams.get('error')) {
+                document.getElementById('error-message').textContent = urlParams.get('error');
+            }
+        };
+    </script>
+</body>
+</html>
+

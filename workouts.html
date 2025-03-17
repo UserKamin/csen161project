@@ -3,41 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout Exercises</title>
-    <link rel="stylesheet" href="base.css">
+    <title>Workouts</title>
+    <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="workouts.css">
     <script src="workouts.js" defer></script>
 </head>
 <body>
-    <div class="navbar">
-        <a href="home.php">Home</a>
-        <span> | </span>
-        <a href="workouts.php">Workouts</a>
-    </div>
-    <div class="workouts-container">
-        <div class="header-container">
-            <div class="filters-container" id="filtersContainer">
-                <select id="muscleGroupFilter">
-                    <option value="">All Muscle Groups</option>
-                    <option value="Chest">Chest</option>
-                    <option value="Back">Back</option>
-                    <option value="Legs">Legs</option>
-                    <option value="Shoulders">Shoulders</option>
-                    <option value="Arms">Arms</option>
-                    <option value="Core">Core</option>
-                </select>
-                <select id="difficultyFilter">
-                    <option value="">All Difficulty Levels</option>
-                    <option value="Beginner">Beginner</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Advanced">Advanced</option>
-                </select>
-            </div>
-            <input type="text" id="searchBar" placeholder="Search by exercise name..."/>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Workout Planner</h1>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="exercises.php" class="nav-link">Exercises</a></li>
+                <li class="nav-item"><a href="workouts.php" class="nav-link active">Workouts</a></li>
+                <li class="nav-item"><a href="calendar.php" class="nav-link">Calendar</a></li>
+                <li class="nav-item"><a href="auth.php?action=logout" class="nav-link">Logout</a></li>
+            </ul>
         </div>
-        <div class="workouts-line"></div>
-        <div class="workouts" id="exercises">
-            <!-- Workout exercises will be dynamically inserted here by PHP -->
+    </nav>
+    <div class="container">
+        <h1>My Workouts</h1>
+        <button id="addWorkoutButton" class="btn">Add New Workout Plan</button>
+        <div id="workoutPlans">
+            <!-- Workout plans will be dynamically inserted here by PHP -->
         </div>
     </div>
 </body>

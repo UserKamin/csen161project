@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="exercises.css">
+    <script src="exercises.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Workout Planner</h1>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="exercises.php" class="nav-link active">Exercises</a></li>
+                <li class="nav-item"><a href="workouts.php" class="nav-link">Workouts</a></li>
+                <li class="nav-item"><a href="calendar.php" class="nav-link">Calendar</a></li>
+                <li class="nav-item"><a href="auth.php?action=logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Exercises</h1>
+        <div class="header-container">
+            <div class="filters-container" id="filtersContainer">
+                <select id="muscleGroupFilter">
+                    <option value="">All Muscle Groups</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                    <option value="Shoulders">Shoulders</option>
+                    <option value="Arms">Arms</option>
+                    <option value="Core">Core</option>
+                </select>
+                <select id="difficultyFilter">
+                    <option value="">All Difficulty Levels</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+            <input type="text" id="searchBar" placeholder="Search by exercise name..."/>
+        </div>
+        <div class="exercises-line"></div>
+        <div class="exercises-grid" id="exercises">
+            <!-- Exercises will be dynamically inserted here by PHP -->
+        </div>
+    </div>
+</body>
+</html>
