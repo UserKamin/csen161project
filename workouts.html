@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Exercises</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="workouts.css">
+    <script src="workouts.js" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.php">Home</a>
+        <span> | </span>
+        <a href="workouts.php">Workouts</a>
+    </div>
+    <div class="workouts-container">
+        <div class="header-container">
+            <div class="filters-container" id="filtersContainer">
+                <select id="muscleGroupFilter">
+                    <option value="">All Muscle Groups</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                    <option value="Shoulders">Shoulders</option>
+                    <option value="Arms">Arms</option>
+                    <option value="Core">Core</option>
+                </select>
+                <select id="difficultyFilter">
+                    <option value="">All Difficulty Levels</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+            <input type="text" id="searchBar" placeholder="Search by exercise name..."/>
+        </div>
+        <div class="workouts-line"></div>
+        <div class="workouts" id="exercises">
+            <!-- Workout exercises will be dynamically inserted here by PHP -->
+        </div>
+    </div>
+</body>
+</html>

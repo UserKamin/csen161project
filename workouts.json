@@ -1,0 +1,179 @@
+{
+  "exercises": [
+    {
+      "name": "Bench Press",
+      "muscle_groups": ["Chest", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "bench_press.jpg",
+      "link": "https://calistree.app/datasheet/barbell-bench-press-e01x"
+    },
+    {
+      "name": "Deadlift",
+      "muscle_groups": ["Back", "Legs", "Core"],
+      "difficulty": "Advanced",
+      "image": "deadlift.jpg",
+      "link": "https://example.com/deadlift"
+    },
+    {
+      "name": "Squat",
+      "muscle_groups": ["Legs", "Core"],
+      "difficulty": "Intermediate",
+      "image": "squat.jpg",
+      "link": "https://example.com/squat"
+    },
+    {
+      "name": "Bicep Curl",
+      "muscle_groups": ["Arms"],
+      "difficulty": "Beginner",
+      "image": "bicep_curl.jpg",
+      "link": "https://example.com/bicep-curl"
+    },
+    {
+      "name": "Overhead Press",
+      "muscle_groups": ["Shoulders", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "overhead_press.jpg",
+      "link": "https://example.com/overhead-press"
+    },
+    {
+      "name": "Pull-Up",
+      "muscle_groups": ["Back", "Arms"],
+      "difficulty": "Advanced",
+      "image": "pull_up.jpg",
+      "link": "https://example.com/pull-up"
+    },
+    {
+      "name": "Push-Up",
+      "muscle_groups": ["Chest", "Arms", "Core"],
+      "difficulty": "Beginner",
+      "image": "push_up.jpg",
+      "link": "https://example.com/push-up"
+    },
+    {
+      "name": "Plank",
+      "muscle_groups": ["Core"],
+      "difficulty": "Beginner",
+      "image": "plank.jpg",
+      "link": "https://example.com/plank"
+    },
+    {
+      "name": "Lunges",
+      "muscle_groups": ["Legs", "Core"],
+      "difficulty": "Intermediate",
+      "image": "lunges.jpg",
+      "link": "https://example.com/lunges"
+    },
+    {
+      "name": "Lat Pulldown",
+      "muscle_groups": ["Back", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "lat_pulldown.jpg",
+      "link": "https://example.com/lat-pulldown"
+    },
+    {
+      "name": "Dumbbell Fly",
+      "muscle_groups": ["Chest", "Shoulders"],
+      "difficulty": "Intermediate",
+      "image": "dumbbell_fly.jpg",
+      "link": "https://example.com/dumbbell-fly"
+    },
+    {
+      "name": "Russian Twist",
+      "muscle_groups": ["Core"],
+      "difficulty": "Intermediate",
+      "image": "russian_twist.jpg",
+      "link": "https://example.com/russian-twist"
+    },
+    {
+      "name": "Leg Press",
+      "muscle_groups": ["Legs"],
+      "difficulty": "Intermediate",
+      "image": "leg_press.jpg",
+      "link": "https://example.com/leg-press"
+    },
+    {
+      "name": "Barbell Row",
+      "muscle_groups": ["Back", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "barbell_row.jpg",
+      "link": "https://example.com/barbell-row"
+    },
+    {
+      "name": "Cable Crossover",
+      "muscle_groups": ["Chest", "Shoulders"],
+      "difficulty": "Intermediate",
+      "image": "cable_crossover.jpg",
+      "link": "https://example.com/cable-crossover"
+    },
+    {
+      "name": "Side Plank",
+      "muscle_groups": ["Core"],
+      "difficulty": "Intermediate",
+      "image": "side_plank.jpg",
+      "link": "https://example.com/side-plank"
+    },
+    {
+      "name": "Hammer Curl",
+      "muscle_groups": ["Arms"],
+      "difficulty": "Beginner",
+      "image": "hammer_curl.jpg",
+      "link": "https://example.com/hammer-curl"
+    },
+    {
+      "name": "Incline Bench Press",
+      "muscle_groups": ["Chest", "Shoulders"],
+      "difficulty": "Intermediate",
+      "image": "incline_bench_press.jpg",
+      "link": "https://example.com/incline-bench-press"
+    },
+    {
+      "name": "Face Pull",
+      "muscle_groups": ["Shoulders", "Back"],
+      "difficulty": "Intermediate",
+      "image": "face_pull.jpg",
+      "link": "https://example.com/face-pull"
+    },
+    {
+      "name": "Calf Raise",
+      "muscle_groups": ["Legs"],
+      "difficulty": "Beginner",
+      "image": "calf_raise.jpg",
+      "link": "https://example.com/calf-raise"
+    },
+    {
+      "name": "Tricep Dip",
+      "muscle_groups": ["Arms"],
+      "difficulty": "Intermediate",
+      "image": "tricep_dip.jpg",
+      "link": "https://example.com/tricep-dip"
+    },
+    {
+      "name": "Hanging Leg Raise",
+      "muscle_groups": ["Core"],
+      "difficulty": "Advanced",
+      "image": "hanging_leg_raise.jpg",
+      "link": "https://example.com/hanging-leg-raise"
+    },
+    {
+      "name": "Arnold Press",
+      "muscle_groups": ["Shoulders", "Arms"],
+      "difficulty": "Intermediate",
+      "image": "arnold_press.jpg",
+      "link": "https://example.com/arnold-press"
+    },
+    {
+      "name": "Romanian Deadlift",
+      "muscle_groups": ["Back", "Legs"],
+      "difficulty": "Advanced",
+      "image": "romanian_deadlift.jpg",
+      "link": "https://example.com/romanian-deadlift"
+    },
+    {
+      "name": "Chest Dip",
+      "muscle_groups": ["Chest", "Arms"],
+      "difficulty": "Advanced",
+      "image": "chest_dip.jpg",
+      "link": "https://example.com/chest-dip"
+    }
+  ]
+}

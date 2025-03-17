@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#addWorkoutButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addWorkoutButton:hover {
+    background-color: #0056b3;
+}
+
+.workout-plan {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.workout-plan h2 {
+    margin: 0 0 10px 0;
+}
+
+.exercises-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.exercise-tag {
+    display: flex;
+    align-items: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.delete-exercise-button {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.delete-exercise-button:hover {
+    color: #ffcccc;
+}
+
+.delete-workout-button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-workout-button:hover {
+    background-color: #c82333;
+}
+
+.no-plans-message {
+    text-align: center;
+    color: #666;
+}
