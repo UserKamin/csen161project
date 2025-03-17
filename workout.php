@@ -88,6 +88,7 @@ if (!isset($_SESSION['user_id'])) {
                 const workoutList = document.createElement('div');
                 workoutList.className = 'workout-list';
                 workoutList.id = `day-${index}`;
+                // Add workouts for this day if they exist
                 if (currentWorkout[index] && currentWorkout[index].length > 0) {
                     currentWorkout[index].forEach(workout => {
                         const workoutTag = document.createElement('div');
@@ -248,66 +249,58 @@ if (!isset($_SESSION['user_id'])) {
         });
 
         // Handle import button
-document.getElementById('import-file').addEventListener('change', function (event) {
-    const file = event.target.files[0];
-    if (!file) {
-        console.error('No file selected.');
-        return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        const content = e.target.result; // Read file content as text
-        console.log('File Content:', content); // Log the file content
-
-        const lines = content.split('\n'); // Split by newline character
-        const workoutName = lines[0].trim(); // First line is the workout name
-        console.log('Parsed Workout Name:', workoutName); // Log the workout name
-
-        const importedWorkout = Array(7).fill([]); // Initialize empty days
-        let currentDayIndex = -1;
-
-        lines.slice(2).forEach((line, index) => {
-            if (line.trim().endsWith(':')) {
-                const dayName = line.trim().slice(0, -1); // Extract day name
-                currentDayIndex = days.indexOf(dayName);
-                console.log(`Parsed Day: ${dayName}, Index: ${currentDayIndex}`); // Log the day and index
-            } else if (line.startsWith('- ')) {
-                const workout = line.slice(2).trim(); // Extract workout activity
-                if (workout && currentDayIndex !== -1) {
-                    importedWorkout[currentDayIndex] = [...importedWorkout[currentDayIndex], workout];
-                    console.log(`Added Workout: ${workout} to Day Index: ${currentDayIndex}`); // Log the added workout
-                }
+        document.getElementById('import-file').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (!file) {
+                console.error('No file selected.');
+                return;
             }
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const content = e.target.result; // Read file content as text
+                console.log('File Content:', content); // Log the file content
+                const lines = content.split('\n'); // Split by newline character
+                const workoutName = lines[0].trim(); // First line is the workout name
+                console.log('Parsed Workout Name:', workoutName); // Log the workout name
+                const importedWorkout = Array(7).fill([]); // Initialize empty days
+                let currentDayIndex = -1;
+                lines.slice(2).forEach((line, index) => {
+                    if (line.trim().endsWith(':')) {
+                        const dayName = line.trim().slice(0, -1); // Extract day name
+                        currentDayIndex = days.indexOf(dayName);
+                        console.log(`Parsed Day: ${dayName}, Index: ${currentDayIndex}`); // Log the day and index
+                    } else if (line.startsWith('- ')) {
+                        const workout = line.slice(2).trim(); // Extract workout activity
+                        if (workout && currentDayIndex !== -1) {
+                            importedWorkout[currentDayIndex] = [...importedWorkout[currentDayIndex], workout];
+                            console.log(`Added Workout: ${workout} to Day Index: ${currentDayIndex}`); // Log the added workout
+                        }
+                    }
+                });
+                console.log('Imported Workout Data:', importedWorkout); // Log the final imported data
+                // Create AJAX request to import workout
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'workout_functions.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onload = function () {
+                    if (this.status === 200) {
+                        const response = JSON.parse(this.responseText);
+                        console.log('Server Response:', response); // Log the server response
+                        if (response.success) {
+                            workouts = response.workouts;
+                            updateWorkoutSelector();
+                            generateCalendar(workoutName);
+                        } else {
+                            alert('Error importing workout: ' + response.message);
+                        }
+                    } else {
+                        alert('An unexpected error occurred while importing the workout.');
+                    }
+                };
+                xhr.send(`action=import_workout&workout_name=${encodeURIComponent(workoutName)}&workout_data=${encodeURIComponent(JSON.stringify(importedWorkout))}`);
+            };
+            reader.readAsText(file); // Read the file as text
         });
-
-        console.log('Imported Workout Data:', importedWorkout); // Log the final imported data
-
-        // Create AJAX request to import workout
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'workout_functions.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function () {
-            if (this.status === 200) {
-                const response = JSON.parse(this.responseText);
-                console.log('Server Response:', response); // Log the server response
-                if (response.success) {
-                    workouts = response.workouts;
-                    updateWorkoutSelector();
-                    generateCalendar(workoutName);
-                } else {
-                    alert('Error importing workout: ' + response.message);
-                }
-            } else {
-                alert('An unexpected error occurred while importing the workout.');
-            }
-        };
-
-        xhr.send(`action=import_workout&workout_name=${encodeURIComponent(workoutName)}&workout_data=${encodeURIComponent(JSON.stringify(importedWorkout))}`);
-    };
-
-    reader.readAsText(file); // Read the file as text
-});
 
         // Handle modal form submission
         document.getElementById('workout-form').addEventListener('submit', function(e) {
