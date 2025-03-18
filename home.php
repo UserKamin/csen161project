@@ -23,6 +23,7 @@ if (!isset($_SESSION['user_id'])) {
                 <li class="nav-item"><a href="exercises.php" class="nav-link">Exercises</a></li>
                 <li class="nav-item"><a href="workouts.php" class="nav-link">Workouts</a></li>
                 <li class="nav-item"><a href="calendar.php" class="nav-link">Calendar</a></li>
+                <li class="nav-item"><a href="tracking.php" class="nav-link">Tracking</a></li>
                 <li class="nav-item"><a href="auth.php?action=logout" class="nav-link">Logout</a></li>
             </ul>
         </div>

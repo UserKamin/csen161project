@@ -1,4 +1,9 @@
 <?php
+libxml_use_internal_errors(true);
+$dom = new DOMDocument();
+$dom->loadHTMLFile('calendar.html');
+libxml_clear_errors(); // Optional: Clear errors after loading
+
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: index.html');
